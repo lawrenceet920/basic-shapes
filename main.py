@@ -38,6 +38,10 @@ def main():
         draw_line(screen, (10, 10), (10, 590), config.BLACK, 5)
         draw_line(screen, (10, 590), (790, 590), config.BLACK, 5)
 
+        # Additional Features
+        mouse_pos = pygame.mouse.get_pos()
+        draw_text(screen, mouse_pos, mouse_pos, 15) # Tells user mouse coordinates
+
         pygame.display.flip()
 
         # Limit clock to FPS
@@ -54,6 +58,11 @@ def draw_circle(screen, center, radius, color, thickness):
     pygame.draw.circle(screen, color, center, radius, thickness)
 def draw_line(screen, start_pos, end_pos, color, thickness):
     pygame.draw.line(screen, color, start_pos, end_pos, thickness)
+def draw_text(screen, text, pos, font_size):
+    font = pygame.font.SysFont('LiberationMono', font_size)
+    display_text = font.render(str(text), True, config.BLACK)
+    screen.blit(display_text, (pos))
+
 
 if __name__ == '__main__':
     main()
