@@ -38,6 +38,10 @@ def main():
         draw_line(screen, (10, 10), (10, 590), config.BLACK, 5)
         draw_line(screen, (10, 590), (790, 590), config.BLACK, 5)
 
+        draw_polygon(screen, [(10, 10), (10, 20), (20, 20), (20, 30), (30,30), (30, 10)], config.ORANGE, 0)
+        draw_polygon(screen, [(10, 10), (790, 10), (790, 590)], config.ORANGE, 3)
+        draw_polygon(screen, [(300, 300), (320, 300), (340, 320), (320, 340), (300, 340), (280, 320), (280, 320)], config.RED, 10)
+
         # Additional Features
         mouse_pos = pygame.mouse.get_pos()
         draw_text(screen, mouse_pos, mouse_pos, 15) # Tells user mouse coordinates
@@ -62,6 +66,8 @@ def draw_text(screen, text, pos, font_size):
     font = pygame.font.SysFont('LiberationMono', font_size)
     display_text = font.render(str(text), True, config.BLACK)
     screen.blit(display_text, (pos))
+def draw_polygon(screen, points, color, thickness):
+    pygame.draw.polygon(screen, color, points, thickness)
 
 
 if __name__ == '__main__':
