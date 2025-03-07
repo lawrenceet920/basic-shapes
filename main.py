@@ -30,7 +30,7 @@ def main():
 
         # Content
         draw_rectange(screen, (100, 100, 100, 100), config.RED, 0)
-        draw_rectange(screen, (200, 200, 200, 200), config.BLUE, 5)
+        draw_rectange(screen, (200, 10, 200, 200), config.BLUE, 5)
 
         draw_circle(screen, (300, 300), 10, config.BLACK, 0)
         draw_circle(screen, (400, 400), 100, config.RED, 20)
